@@ -1,0 +1,34 @@
+{
+  "heading": "高回报的未来",
+  "title": "购买 DB 币",
+  "subTitle": "资格及规则",
+  "data": [
+    {
+      "id": 1,
+      "text": "每个钱包仅限购买一次。"
+    },
+    {
+      "id": 2,
+      "text": "每个钱包限制购买金额从最低 10 USDT 到最高 5000 USDT。"
+    },
+    {
+      "id": 3,
+      "text": "每次钱包购买将获得 100％ 的 DB 符號 价值额度。"
+    },
+    {
+      "id": 4,
+      "text": "购买成功后，DB Token将发放到您的钱包中。"
+    },
+    {
+      "id": 5,
+      "text": "收到DB Token后，购买金额的 75％ 可以在平台上随时兑换为 USDT 或转出，剩余25％必须持有 18 个月后才可以兑换为 USDT 或转出。"
+    }
+  ],
+  "inputPlaceholder": "输入 USDT 数量",
+  "btnText": "购买",
+  "purchaseStatus": {
+    "textOne": "祝賀",
+    "textTwo": "你現在是 DB",
+    "textThree": "代幣持有人"
+  }
+}

@@ -3,7 +3,9 @@ import {
   DisclosureButton,
   DisclosurePanel,
 } from "@headlessui/react";
-import { Minus, Plus } from "lucide-react";
+import { useNavigate } from "react-router-dom";
+import { Hand, Minus, Plus } from "lucide-react";
+import {useTranslation} from "react-i18next";
 
 const faqs = [
   {
@@ -30,6 +32,22 @@ const faqs = [
   },
   {
     id: 2,
+    text: "Products and services.",
+    answer_one_heading: "(a) Digital asset management",
+    answer_one:
+      "A safe and simple cryptocurrency storage and management solution that allows your assets to steadily increase in value on the blockchain",
+    answer_two_heading: "(b) Decentralized lending",
+    answer_two:
+      "By providing fast and transparent lending services through smart contracts, borrowing and lending are more convenient and secure.",
+    answer_three_heading: "(c) Seamless cross-border payment",
+    answer_three:
+      "Through blockchain technology, we can achieve real-time and low-cost international payment, making the flow of funds borderless",
+    answer_four_heading: "(d) Blockchain investment and financial management",
+    answer_four:
+      "Diverse investment tools and strategies help you realize wealth appreciation in the blockchain field",
+  },
+  {
+    id: 3,
     text: "Technical advantages.",
     answer_one_heading: "(a) State-of-the-art blockchain architecture",
     answer_one:
@@ -43,22 +61,6 @@ const faqs = [
     answer_three:
       "From hardware to software, our multi-layer security protection system ensures the highest\n" +
       "security level for user data and assets.",
-  },
-  {
-    id: 3,
-    text: "Investor benefits.",
-    answer_one_heading: "(a) Dividends for token holders",
-    answer_one:
-      "As a DB token holder, you will have the right to share the platform's revenue and profits and\n" +
-      "enjoy continuous financial returns.",
-    answer_two_heading: "(b) Exclusive investment return plan",
-    answer_two:
-      "The platform has designed an exclusive return plan for early investors, providing additional\n" +
-      "token rewards and priority investment opportunities.",
-    answer_three:
-      "(c) Participation in community governance\n\n" +
-      "Investors holding tokens can participate in the governance and decision-making of the\n" +
-      "platform and truly become part of the project.",
   },
   {
     id: 4,
@@ -116,11 +118,16 @@ const faqs = [
     id: 9,
     text: "Social media",
     answer_one:
-      "Follow our social media to get the latest project updates and industry information: [Social media links]",
+      "Follow our social media to get the latest project updates and industry information: ",
     answer_one_link: "https://x.com/DbDechain?t=OA0lOPsGKYWK4OO8bLCbhQ&s=09",
   },
 ];
 const Faq = () => {
+  const navigate = useNavigate();
+  const {t} = useTranslation("home")
+  const handleClick = () => {
+    navigate("/register");
+  };
   return (
     <div
       style={{
@@ -130,35 +137,29 @@ const Faq = () => {
     >
       <div className="px-2 md:px-0 py-6 mx-auto max-w-2xl lg:max-w-4xl">
         <h2 className="text-center text-xl sm:text-3xl font-medium mt-6 mb-8 sm:mb-16">
-          WELCOME TO DECHAIN BANK <br className="hidden sm:flex" /> ——THE
-          INNOVATOR OF FUTURE FINANCE!
+          {t('titleFirstHalf')} <br className="hidden sm:flex" /> {t('titleSecondHalf')}
         </h2>
 
         <p className="text-center text-xl sm:text-2xl mb-10">
-          REDEFINE BANKING AND USHER IN A NEW ERA OF DECENTRALIZED FINANCE
+          {t('subTitle')}
         </p>
 
         <div className="flex flex-col items-center shadow-xl shadow-gray-600 bg-white max-w-2xl lg:max-w-4xl border-[#00A2FF] border-2 rounded py-10 px-4">
           <h3 className="text-center text-2xl font-medium mb-10">
-            Dechain Bank
+            {t('DechainBank')}
           </h3>
 
           <p className="text-justify font-semibold text-md">
-            In the era of digitalization and decentralization, Dechain Bank is a
-            bank based entirely on blockchain technology, committed to
-            subverting the traditional financial system. Our platform not only
-            provides secure, transparent and efficient financial services, but
-            also brings unparalleled economic opportunities to users around the
-            world.
+            {t('DechainBankText')}
           </p>
 
           <div className="w-full md:w-3/4 bg-black text-white px-5 sm:px-10 rounded-2xl py-10 mt-10">
             <h2 className="text-2xl text-center font-bold leading-10 tracking-tight text-white">
-              FAQ
+              {t('FAQ')}
             </h2>
             <dl className="mt-5 space-y-6 divide-y divide-white-900/10">
-              {faqs.map((faq) => (
-                <Disclosure as="div" key={faq.question} className="pt-6">
+              {t('faqs').map((faq) => (
+                <Disclosure as="div" key={faq.id} className="pt-6">
                   {({ open }) => (
                     <>
                       <dt>
@@ -224,8 +225,9 @@ const Faq = () => {
           <button
             type="button"
             className="rounded-md bg-[#00A1FF] max-w-full w-full sm:w-80 px-3.5 py-2 sm:py-4 text-lg sm:text-2xl font-semibold text-white shadow-lg shadow-gray-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
+            onClick={handleClick}
           >
-            Buy DB Token
+            {t('btntext')}
           </button>
         </div>
       </div>

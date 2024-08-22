@@ -1,0 +1,62 @@
+{
+  "heading": "Challenge The Mission To Earn DB Tokens Worth $19,730",
+  "title": "Challenge Mission Get DB Token",
+  "subTitle": "Eligibility & Rules",
+  "TitleChallengeMission": "Challenge Mission",
+  "data": [
+    {
+      "id": 1,
+      "text": "Only one purchase per wallet."
+    },
+    {
+      "id": 2,
+      "text": "Users must donate 1000DB to participate in this event."
+    },
+    {
+      "id": 3,
+      "text": "Users only need to invite 6 friends to participate in the event to receive dividend rewards."
+    },
+    {
+      "id": 4,
+      "text": "Referral Bonus:",
+      "subitem": [
+        {
+          "id": 1,
+          "text": "- The first 6 referral bonuses are 550 DB Token each"
+        },
+        {
+          "id": 2,
+          "text": "- The referral bonuses after 6 are 950 DB Token each"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "Users can enjoy 3 dividend pools get DB Token:",
+      "subitem": [
+        {
+          "id": 1,
+          "text": "(a) Phase 1 pool-Users can get up to 7560 DB Token"
+        },
+        {
+          "id": 2,
+          "text": "(b) Phase 2 pool-Users can get up to 30240 DB Token"
+        },
+        {
+          "id": 3,
+          "text": "(c) Phase 3 pool-Users can get up to 159500 DB Token"
+        }
+      ]
+    }
+  ],
+  "inputPlaceholder": "Enter your referral address",
+  "btnText": "Join",
+  "dividendPoolText": "Referrals",
+  "ReferralsBonusText": "Referrals Bonus",
+  "ReferralsNumberText": "Referrals Number",
+  "CommunityCompletedText": "Mission Complete",
+  "GameWinnerText": "Game Winner",
+  "Phase_1": "Phase 1 Pool Dividend",
+  "Phase_2": "Phase 2 Pool Dividend",
+  "Phase_3": "Phase 3 Pool Dividend"
+}

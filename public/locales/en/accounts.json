@@ -1,0 +1,33 @@
+{
+  "heading": "Referrals Reward",
+  "title": "Eligibility & Rules",
+  "data": [
+    {
+      "id": 1,
+      "text": "You must purchase at least 10 USDT of DB Token to be eligible to recommend friends."
+    },
+    {
+      "id": 2,
+      "text": "Your referral reward will be directly sent to your wallet."
+    },
+    {
+      "id": 3,
+      "text": "The platform has two types of referral rewards, divided into 5% direct referral reward and 0.2% 30-Generation reward."
+    },
+    {
+      "id": 4,
+      "text": "Direct referral rewards are rewards earned through direct referrals."
+    },
+    {
+      "id": 5,
+      "text": "Generation Reward Program By inviting friends to join, you will receive generous generation rewards. For every friend you recommend, you can enjoy two generations of rewards; for two\n friends you recommend, you can enjoy four generations of rewards. As the number of\n referrals increases, your generation reward levels will also increase accordingly, up to 30\n generations of rewards."
+    }
+  ],
+  "boxText": {
+    "textOne": "Community Reward",
+    "textTwo": "Referrals Reward",
+    "textThree": "Direct Referrals"
+  },
+  "btnText": "Share",
+  "btnText2": "Shared"
+}

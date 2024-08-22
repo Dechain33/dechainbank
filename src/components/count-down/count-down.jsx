@@ -1,4 +1,5 @@
 import {useEffect, useState} from "react";
+import {useTranslation} from "react-i18next";
 
 const CountDown = () => {
     const [countdownDate] = useState(new Date('12/25/2024').getTime());
@@ -8,6 +9,8 @@ const CountDown = () => {
         minutes: 0,
         seconds: 0,
     });
+    const {t} = useTranslation("Exchange")
+    const {days, hours, minutes, seconds} = t('time')
     useEffect(() => {
         setInterval(() => setNewTime(), 1000);
     }, []);
@@ -46,7 +49,7 @@ const CountDown = () => {
             >
                 <div
                     className="shadow-xl shadow-gray-600 bg-white max-w-2xl lg:max-w-4xl border-[#00A2FF] border-2 rounded-3xl py-10 px-2 sm:px-6">
-                    <h2 className="text-center text-xl sm:text-3xl font-bold mb-6 sm:mb-14">DB Token Initial Prices</h2>
+                    <h2 className="text-center text-xl sm:text-3xl font-bold mb-6 sm:mb-14">{t('heading')}</h2>
 
                     <div
                         className="bg-[#00A1FF] shadow-lg shadow-gray-400 px-2 py-3 sm:py-6 rounded-2xl w-full flex justify-center items-center">
@@ -61,7 +64,7 @@ const CountDown = () => {
                         </div>
                     </div>
 
-                    <h3 className="text-center text-lg sm:text-3xl font-medium my-6 sm:mt-14 sm:mb-10">DB Token is listed on DEX</h3>
+                    <h3 className="text-center text-lg sm:text-3xl font-medium my-6 sm:mt-14 sm:mb-10">{t('subheading')}</h3>
 
                     {
                         timeLeft.days === 0 && timeLeft.hours === 0 && timeLeft.minutes === 0 && timeLeft.seconds === 0
@@ -77,7 +80,7 @@ const CountDown = () => {
                                             </div>
                                         </div>
                                         <div className="font-medium text-[12px] sm:text-md">
-                                            Days
+                                            {days}
                                         </div>
                                     </section>
                                     <section className="flex items-center justify-center flex-col gap-2">
@@ -88,7 +91,7 @@ const CountDown = () => {
                                             </div>
                                         </div>
                                         <div className="font-medium text-[12px] sm:text-md">
-                                            Hours
+                                            {hours}
                                         </div>
                                     </section>
                                     <section className="flex items-center justify-center flex-col gap-2">
@@ -99,7 +102,7 @@ const CountDown = () => {
                                             </div>
                                         </div>
                                         <div className="font-medium text-[12px] sm:text-md">
-                                            Minutes
+                                            {minutes}
                                         </div>
                                     </section>
                                     <section className="flex items-center justify-center flex-col gap-2">
@@ -110,7 +113,7 @@ const CountDown = () => {
                                             </div>
                                         </div>
                                         <div className="font-medium text-[12px] sm:text-md">
-                                            Seconds
+                                            {seconds}
                                         </div>
                                     </section>
                                 </div>

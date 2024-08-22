@@ -1,0 +1,12 @@
+{
+  "heading": "DB Token Initial Prices",
+  "subheading": "DB Token is listed on DEX",
+  "time": {
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds"
+  },
+  "exchangeText": "Exchange",
+  "btnText": "Swap"
+}

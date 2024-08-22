@@ -1,0 +1,62 @@
+{
+  "heading": "挑战任务赢取价值 19,730 美元的 DB 币",
+  "title": "挑战任务获取 DB 币",
+  "subTitle": "资格及规则",
+  "TitleChallengeMission": "挑战任务",
+  "data": [
+    {
+      "id": 1,
+      "text": "每个钱包只能购买一次。"
+    },
+    {
+      "id": 2,
+      "text": "用户必须捐赠 1000 DB 才能参与此活动。"
+    },
+    {
+      "id": 3,
+      "text": "用户只需邀请6位朋友参与活动即可获得分红奖励。"
+    },
+    {
+      "id": 4,
+      "text": "推荐奖金：",
+      "subitem": [
+        {
+          "id": 1,
+          "text": "- 前 6 位推荐奖金每人 550 DB Token"
+        },
+        {
+          "id": 2,
+          "text": "- 6 位之后的推荐奖金每人 950 DB Token"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "text": "用户可以享受3个分红池获得DB Token：",
+      "subitem": [
+        {
+          "id": 1,
+          "text": "（a）第一阶段池-用户最多可获得 7560 DB Token"
+        },
+        {
+          "id": 2,
+          "text": "（b）第二阶段池-用户最多可获得 30240 DB Token"
+        },
+        {
+          "id": 3,
+          "text": "（c）第三阶段池-用户最多可获得 159500 DB Token"
+        }
+      ]
+    }
+  ],
+  "inputPlaceholder": "输入您的推荐地址",
+  "btnText": "加入",
+  "dividendPoolText": "红利池阶段",
+  "ReferralsBonusText": "推荐奖金",
+  "ReferralsNumberText": "推荐人数",
+  "CommunityCompletedText": "任务完成",
+  "GameWinnerText": "游戏获胜者",
+  "Phase_1": "第一阶段池分红",
+  "Phase_2": "第二阶段池分红",
+  "Phase_3": "第三阶段池分红"
+}

@@ -1,0 +1,87 @@
+{
+  "titleFirstHalf" : "欢迎来到 DECHAIN BANK",
+  "titleSecondHalf" : "——未来金融的创新者！",
+  "subTitle": "重新定义银行业务，开启去中心化金融新时代",
+  "DechainBank": "Dechain Bank",
+  "DechainBankText": "在数字化和去中心化时代，Dechain Bank 是一家完全基于区块链技术的银行，致力于颠覆传统金融体系。我们的平台不仅提供安全、透明、高效的金融服 务，还为全球用户带来无与伦比的经济机会。",
+  "FAQ": "常问问题",
+  "faqs" : [
+    {
+      "id": 1,
+      "text": "为什么选择 Dechain Bank？",
+      "answer_one_heading": "(a) 安全透明的金融服务",
+      "answer_one": "区块链技术确保每一笔交易的安全透明，无需中介，所有交易记录永久有效， 不可篡改，确保用户资金安全。",
+      "answer_two_heading": "(b) 全球金融平台",
+      "answer_two": "Dechain Bank 不再受传统银行的地域限制，用户可在全球自由转账、进行金融 操作，真正实现跨境无缝对接。",
+      "answer_three_heading": "(c) 高效的去中心化系统",
+      "answer_three": "Dechain Bank 的智能合约自动执行所有金融协议，无需人工干预，大大降低运 营成本，提高交易效率。",
+      "answer_four_heading": "(d) 创新的投资机会",
+      "answer_four": "通过 Dechain Bank 的平台，参与者将能够投资未来的金融基础设施，分享平台 成长带来的丰厚收益。"
+    },
+    {
+      "id": 2,
+      "text": "产品和服务.",
+      "answer_one_heading": "(a) 数字资产管理",
+      "answer_one": "安全、简单的 加密货币存储和管理解决方案，让您的资产在区块链上稳步增值",
+      "answer_two_heading": "(b) 去中心化借贷",
+      "answer_two": "通过智能合约提供快速透明的借贷服务，借贷更加便捷安全。",
+      "answer_three_heading": "(c) 无缝跨境支付",
+      "answer_three": "通过区块链技术，实现实时低成本的国际支付，让资金流动无国界。",
+      "answer_four_heading": "(d) 区块链投资理财",
+      "answer_four": "多样化的投资工具和策略助您在区块链领域实现财富增值。"
+    },
+    {
+      "id": 3,
+      "text": "技术优势",
+      "answer_one_heading": "(a) 最先进的区块链架构",
+      "answer_one": "采用最新的区块链技术，提供高吞吐量、低延迟的交易处理能力，确保平台高 效运行。",
+      "answer_two_heading": "(b) 智能合约自动执行",
+      "answer_two": "利用智能合约简化和自动化复杂的金融协议，确保公平、高效的执行。",
+      "answer_three_heading": "(c) 多层安全保护",
+      "answer_three": "从硬件到软件，我们的多层安全保护体系确保用户数据和资产的最高安全级 别。"
+    },
+    {
+      "id": 4,
+      "text": "投资者利益",
+      "answer_one_heading": "(a) 代币持有者的分红",
+      "answer_one": "作为DB代币持有者，您将有权分享平台的收益和利润，享受持续的财务回报。",
+      "answer_two_heading": "(b) 专属投资回报计划",
+      "answer_two": "平台为早期投资者设计了专属回报计划，提供额外的代币奖励和优先投资机 会。",
+      "answer_three_heading": "(c) 参与社区治理",
+      "answer_three": "持有代币的投资者可以参与平台的治理和决策，真正成为项目的一部分。"
+    },
+    {
+      "id": 5,
+      "text": "如何参与 Dechain Bank 的 ICO。",
+      "answer_one_heading": "(a) 注册账户",
+      "answer_one": "在 Dechain Bank 官网创建您的账户，加入全球区块链银行的变革。",
+      "answer_two_heading": "(b) 购买代币",
+      "answer_two": "通过 Dechain Bank 平台轻松购买 [DB] 代币，成为未来金融生态系统的一员。",
+      "answer_three_heading": "(c) 开启您的投资之旅",
+      "answer_three": "持有代币，参与我们丰富的金融产品和服务，见证您的投资成长。"
+    },
+    {
+      "id": 6,
+      "text": "团队介绍",
+      "answer_one": "Dechain Bank 由一批经验丰富的区块链专家和金融行业资深人士组成，致力于 将最先进的技术与深厚的金融经验相结合，为用户打造全新的金融体验。"
+    },
+    {
+      "id": 7,
+      "text": "加入我们，共同塑造金融的未来",
+      "answer_one": "在 Dechain Bank，你不仅仅是投资者，更是推动金融创新的一份子。加入我 们的社区，共同见证和参与这一激动人心的旅程！"
+    },
+    {
+      "id": 8,
+      "text": "联系我们",
+      "answer_one": "如果您有任何疑问或需要更多信息，请随时联系我们的支持团队：",
+      "answer_one_link": "https://t.me/DECHAIN_DB_SUPPOER"
+    },
+    {
+      "id": 9,
+      "text": "社交媒体",
+      "answer_one": "关注我们的社交媒体以获取最新的项目更新和行业信息：",
+      "answer_one_link": "https://x.com/DbDechain?t=OA0lOPsGKYWK4OO8bLCbhQ&s=09"
+    }
+  ],
+  "btntext": "购买 DB 币"
+}

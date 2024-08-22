@@ -1,0 +1,12 @@
+{
+  "heading": "DB 币初始价格",
+  "subheading": "DB 币在 DEX 上线",
+  "time": {
+    "days": "天",
+    "hours": "时",
+    "minutes": "分",
+    "seconds": "秒"
+  },
+  "exchangeText": "交易",
+  "btnText": "闪对"
+}

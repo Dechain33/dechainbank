@@ -1,0 +1,13 @@
+{
+  "navItemHome": "Home",
+  "navItemRegister": "Register",
+  "navItemPurchaseDBToken": "Purchase DB Token",
+  "navItemAccounts": "Accounts",
+  "navItemExchange": "Exchange",
+  "navItemChallengeMission": "Challenge Mission",
+  "navItemWhitePaper": "Whitepaper",
+  "navItemConnectWallet": "Connect Wallet",
+  "english": "English",
+  "chinese": "Chinese",
+  "languages": "Languages"
+}

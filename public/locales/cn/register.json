@@ -1,0 +1,21 @@
+{
+  "title": "購買 資料庫 硬幣，開始您的高回報之旅",
+  "greeting": "註冊",
+  "description": {
+    "line1": "您必須註冊才能購買 資料庫 代幣",
+    "line2": "如果您沒有推薦 ID，請使用此",
+    "line3": "0xFC67Dde2daf07C7F6D5b51965b0620dd71aA16Df"
+  },
+  "inputPlaceHolder": "輸入您的推薦 ID",
+  "registrationStatus": {
+    "lineOne": "註冊完成",
+    "lineTwo": "前往購買 資料庫",
+    "lineThree": "代幣頁面"
+  },
+  "toastMessage": {
+    "pending" : "交易待定...",
+    "successful" : "註冊成功",
+    "Insufficient" : "餘額不足",
+    "Error" : "錯誤"
+  }
+}

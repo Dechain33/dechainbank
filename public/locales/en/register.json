@@ -1,0 +1,21 @@
+{
+  "title": "BUY DB COINS AND START YOUR JOURNEY OF HIGH RETURNS",
+  "greeting": "Register",
+  "description": {
+    "line1": "You must register to purchase DB Token",
+    "line2": "If you don't have a referral ID, use this",
+    "line3": "0xFC67Dde2daf07C7F6D5b51965b0620dd71aA16Df"
+  },
+  "inputPlaceHolder": "Enter your referral ID",
+  "registrationStatus": {
+    "lineOne": "Register Complete",
+    "lineTwo": "Go To Purchase DB",
+    "lineThree": "Token Page"
+  },
+  "toastMessage": {
+    "pending" : "Transaction pending...",
+    "successful" : "Registration Successful",
+    "Insufficient" : "Insufficient Balance",
+    "Error" : "Error"
+  }
+}
