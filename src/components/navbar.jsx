@@ -152,8 +152,8 @@ const Navbar = () => {
       await DBTokenContractIns[`numOfUnitRequiredForPool${poolId}`]()
     );
 
-    const totalBalance = (pool1UnitSize * numReqFor1 * 45) / 100;
-
+    const totalBalance =
+      (pool1UnitSize * numReqFor1 * (poolId == 3 ? 95 : 45)) / 100;
     const range = Math.round((poolBal / totalBalance) * 100);
     const data = {
       balance: poolBal,
