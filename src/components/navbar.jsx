@@ -73,7 +73,7 @@ const Navbar = () => {
         context.setTotalRef(referralCount);
 
         const refReward = Number(
-          await DBTokenContractIns.referralRewards(address)
+          WeiToETH(await DBTokenContractIns.referralRewards(address))
         );
         context.setTotalRefRewards(refReward);
 
