@@ -5,7 +5,8 @@ import { getParsedEthersError } from "@enzoferey/ethers-error-parser";
 import { toast } from "react-toastify";
 import options from "@/utils/options";
 import { ethToWei } from "@/utils/weiToETH";
-import {useTranslation} from "react-i18next";
+import { useTranslation } from "react-i18next";
+import { useWeb3ModalAccount } from "@web3modal/ethers5/react";
 
 const Exchange = () => {
   const context = useContext(UserDataContext);
@@ -13,38 +14,49 @@ const Exchange = () => {
   const [usdtAmt, setUsdtAmt] = useState(0);
   const [tokenAmt, setTokenAmt] = useState(0);
 
-  const {t} = useTranslation("Exchange")
+  const { isConnected } = useWeb3ModalAccount();
+
+  const { t } = useTranslation("Exchange");
+
   const handleChange = (e) => {
-    setTokenAmt(e.target.value);
-    setUsdtAmt(e.target.value * context.tokenPriceForSwap);
+    if (isConnected) {
+      setTokenAmt(e.target.value);
+      setUsdtAmt(e.target.value * context.tokenPriceForSwap);
+    } else {
+      toast.error("Please connect wallet", options);
+    }
   };
 
   const handleSwap = async () => {
-    try {
-      const amount = ethToWei(tokenAmt);
-      const tx = await context.dbTokenContractIns.swapToUSDT(amount);
-      const id = toast.loading("Transaction pending...", options);
-      const res = await tx.wait();
-      if (res) {
-        toast.update(id, {
-          render: "Swap Successful",
-          type: "success",
-          isLoading: false,
-          autoClose: 5000,
-        });
-      } else {
-        toast.error("Error", options);
-      }
-    } catch (error) {
-      console.log(error);
-      const parsedEthersError = getParsedEthersError(error);
-      if (parsedEthersError.context == -32603) {
-        toast.error("Insufficient Balance", options);
-      } else if (parsedEthersError.context == undefined) {
+    if (isConnected) {
+      try {
+        const amount = ethToWei(tokenAmt);
+        const tx = await context.dbTokenContractIns.swapToUSDT(amount);
+        const id = toast.loading("Transaction pending...", options);
+        const res = await tx.wait();
+        if (res) {
+          toast.update(id, {
+            render: "Swap Successful",
+            type: "success",
+            isLoading: false,
+            autoClose: 5000,
+          });
+        } else {
+          toast.error("Error", options);
+        }
+      } catch (error) {
         console.log(error);
-      } else {
-        toast.error(`${parsedEthersError.context}`, options);
+        const parsedEthersError = getParsedEthersError(error);
+        if (parsedEthersError.context == -32603) {
+          toast.error("Insufficient Balance", options);
+        } else if (parsedEthersError.context == undefined) {
+          console.log(error);
+        } else {
+          toast.error(`${parsedEthersError.context}`, options);
+        }
       }
+    } else {
+      toast.error("Please connect wallet", options);
     }
   };
   return (
@@ -57,7 +69,7 @@ const Exchange = () => {
       <div className="px-2 md:px-0 py-10 mx-auto max-w-2xl lg:max-w-4xl">
         <div className="shadow-lg shadow-gray-600 flex flex-col items-center bg-white max-w-2xl lg:max-w-4xl border-[#00A2FF] border-2 rounded-3xl py-10 px-2 sm:px-4">
           <h2 className="text-center text-3xl font-medium mt-6 mb-8 sm:mb-16">
-            {t('exchangeText')}
+            {t("exchangeText")}
           </h2>
 
           <div className="w-full lg:w-4/5 px-5 flex justify-between items-center mb-5">
@@ -94,7 +106,7 @@ const Exchange = () => {
             className="rounded-2xl bg-[#00A1FF] max-w-full w-full lg:w-4/5 px-3.5 py-4 sm:text-3xl font-semibold text-white shadow-lg shadow-gray-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2"
             onClick={handleSwap}
           >
-            {t('btnText')}
+            {t("btnText")}
           </button>
         </div>
       </div>

@@ -6,10 +6,11 @@ import { ethToWei, WeiToETH } from "@/utils/weiToETH";
 import { useWeb3ModalAccount } from "@web3modal/ethers5/react";
 import { getParsedEthersError } from "@enzoferey/ethers-error-parser";
 import { useTranslation } from "react-i18next";
+
 const Returns = () => {
   const [purchaseStatus, setPurchaseStatus] = useState(false);
   const context = useContext(UserDataContext);
-  const { address } = useWeb3ModalAccount();
+  const { address, isConnected } = useWeb3ModalAccount();
   const [usdtAmt, setUsdtAmt] = useState(0);
   const [tokenAmt, setTokenAmt] = useState(0);
 
@@ -18,54 +19,30 @@ const Returns = () => {
   const { textOne, textTwo, textThree } = t("purchaseStatus");
 
   const handleChange = (e) => {
-    setUsdtAmt(e.target.value);
-    setTokenAmt(e.target.value / context.tokenPrice);
+    if (isConnected) {
+      setUsdtAmt(e.target.value);
+      setTokenAmt(e.target.value / context.tokenPrice);
+    } else {
+      toast.error("Please connect wallet", options);
+    }
   };
 
   const handleBuyToken = async () => {
-    if (usdtAmt >= context.minAmount && usdtAmt <= context.maxAmount) {
-      const amount = usdtAmt * 1000000;
-      try {
-        const allowedAmt = await context.usdtContractIns.allowance(
-          address,
-          context.dbTokenContractIns.address
-        );
-
-        if (amount <= allowedAmt) {
-          const tx = await context.dbTokenContractIns.buyTokens(amount);
-          const id = toast.loading("Transaction pending...", options);
-          const res = await tx.wait();
-          if (res) {
-            toast.update(id, {
-              render: "Purchase Successful",
-              type: "success",
-              isLoading: false,
-              autoClose: 5000,
-            });
-            setPurchaseStatus(true);
-          } else {
-            toast.error("Error", options);
-          }
-        } else {
-          const tx = await context.usdtContractIns.approve(
-            context.dbTokenContractIns.address,
-            amount
+    if (isConnected) {
+      if (usdtAmt >= context.minAmount && usdtAmt <= context.maxAmount) {
+        const amount = usdtAmt * 1000000;
+        try {
+          const allowedAmt = await context.usdtContractIns.allowance(
+            address,
+            context.dbTokenContractIns.address
           );
-          const id = toast.loading("Transaction pending...", options);
-          const res = await tx.wait();
-          if (res) {
-            toast.update(id, {
-              render: "Approved",
-              type: "success",
-              isLoading: false,
-              autoClose: 5000,
-            });
 
-            const tx1 = await context.dbTokenContractIns.buyTokens(amount);
-            const id1 = toast.loading("Transaction pending...", options);
-            const res1 = await tx1.wait();
-            if (res1) {
-              toast.update(id1, {
+          if (amount <= allowedAmt) {
+            const tx = await context.dbTokenContractIns.buyTokens(amount);
+            const id = toast.loading("Transaction pending...", options);
+            const res = await tx.wait();
+            if (res) {
+              toast.update(id, {
                 render: "Purchase Successful",
                 type: "success",
                 isLoading: false,
@@ -76,22 +53,54 @@ const Returns = () => {
               toast.error("Error", options);
             }
           } else {
-            toast.error("Error", options);
+            const tx = await context.usdtContractIns.approve(
+              context.dbTokenContractIns.address,
+              amount
+            );
+            const id = toast.loading("Transaction pending...", options);
+            const res = await tx.wait();
+            if (res) {
+              toast.update(id, {
+                render: "Approved",
+                type: "success",
+                isLoading: false,
+                autoClose: 5000,
+              });
+
+              const tx1 = await context.dbTokenContractIns.buyTokens(amount);
+              const id1 = toast.loading("Transaction pending...", options);
+              const res1 = await tx1.wait();
+              if (res1) {
+                toast.update(id1, {
+                  render: "Purchase Successful",
+                  type: "success",
+                  isLoading: false,
+                  autoClose: 5000,
+                });
+                setPurchaseStatus(true);
+              } else {
+                toast.error("Error", options);
+              }
+            } else {
+              toast.error("Error", options);
+            }
+          }
+        } catch (error) {
+          console.log(error);
+          const parsedEthersError = getParsedEthersError(error);
+          if (parsedEthersError.context == -32603) {
+            toast.error("Insufficient Balance", options);
+          } else if (parsedEthersError.context == undefined) {
+            console.log(error);
+          } else {
+            toast.error(`${parsedEthersError.context}`, options);
           }
         }
-      } catch (error) {
-        console.log(error);
-        const parsedEthersError = getParsedEthersError(error);
-        if (parsedEthersError.context == -32603) {
-          toast.error("Insufficient Balance", options);
-        } else if (parsedEthersError.context == undefined) {
-          console.log(error);
-        } else {
-          toast.error(`${parsedEthersError.context}`, options);
-        }
+      } else {
+        toast.error("Min or max amount error", options);
       }
     } else {
-      toast.error("Min or max amount error", options);
+      toast.error("Please connect wallet", options);
     }
   };
   return (

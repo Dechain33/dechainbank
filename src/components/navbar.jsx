@@ -77,15 +77,13 @@ const Navbar = () => {
         );
         context.setTotalRefRewards(refReward);
 
-        const tknPrice = Number(
-          WeiToETH(await DBTokenContractIns.tokenPrice())
-        );
+        const tknPrice =
+          Number(await DBTokenContractIns.tokenPrice()) / 1000000;
 
         context.setTokenPrice(tknPrice);
 
-        const tknPriceSwap = Number(
-          WeiToETH(await DBTokenContractIns.tokenPriceForSwap())
-        );
+        const tknPriceSwap =
+          Number(await DBTokenContractIns.tokenPriceForSwap()) / 1000000;
 
         context.setTokenPriceForSwap(tknPriceSwap);
 
