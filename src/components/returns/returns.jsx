@@ -21,7 +21,7 @@ const Returns = () => {
   const handleChange = (e) => {
     if (isConnected) {
       setUsdtAmt(e.target.value);
-      setTokenAmt(e.target.value / context.tokenPrice);
+      setTokenAmt((e.target.value * 80) / (context.tokenPrice * 100));
     } else {
       toast.error("Please connect wallet", options);
     }

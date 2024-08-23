@@ -100,14 +100,13 @@ const Navbar = () => {
 
         context.setPoolEntryFee(poolFee);
 
-        const minAmt = Number(
-          WeiToETH(await DBTokenContractIns.MIN_PURCHASE())
-        );
+        const minAmt =
+          Number(await DBTokenContractIns.MIN_PURCHASE()) / 1000000;
 
-        const maxAmt = Number(
-          WeiToETH(await DBTokenContractIns.MAX_PURCHASE())
-        );
+        const maxAmt =
+          Number(await DBTokenContractIns.MAX_PURCHASE()) / 1000000;
 
+        console.log("min max", minAmt, maxAmt);
         context.setMinAmount(minAmt);
         context.setMaxAmount(maxAmt);
 
