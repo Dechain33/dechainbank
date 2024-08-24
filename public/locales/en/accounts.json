@@ -24,8 +24,6 @@
     }
   ],
   "boxText": {
-    "textOne": "Total Performance",
-    "textTwo": "Personal Performance",
     "textThree": "Direct Referrals"
   },
   "btnText": "Share",
