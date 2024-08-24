@@ -106,7 +106,6 @@ const Navbar = () => {
         const maxAmt =
           Number(await DBTokenContractIns.MAX_PURCHASE()) / 1000000;
 
-        console.log("min max", minAmt, maxAmt);
         context.setMinAmount(minAmt);
         context.setMaxAmount(maxAmt);
 
@@ -132,6 +131,7 @@ const Navbar = () => {
         context.setDbTokenContractIns(DBTokenContractIns);
 
         const poolDet = await getAllPoolsHistory(DBTokenContractIns);
+
         context.setPoolsHistory(poolDet);
       }
     }
@@ -169,13 +169,19 @@ const Navbar = () => {
         index
       );
 
-      const results =
-        index == 3
-          ? [poolParticipants[0]]
-          : [
-              poolParticipants[0],
-              poolParticipants[poolParticipants.length - 1],
-            ];
+      let results = [];
+      if (poolParticipants.length > 0) {
+        results =
+          index == 3
+            ? [poolParticipants[0]]
+            : poolParticipants.length > 1
+            ? [
+                poolParticipants[0],
+                poolParticipants[poolParticipants.length - 1],
+              ]
+            : [poolParticipants[0]];
+      }
+
       const formattedParticipants = results.map((participant, i) => ({
         id: arr.length + i + 1,
         text: trimWallet(participant),
@@ -186,7 +192,6 @@ const Navbar = () => {
       arr.push(...formattedParticipants);
     }
 
-    console.log("Array", arr);
     return arr;
   };
 

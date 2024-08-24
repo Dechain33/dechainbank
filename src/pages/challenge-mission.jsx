@@ -50,8 +50,6 @@ const ChallengeMission = () => {
 
   const { t } = useTranslation("ChallengeMission");
 
-  console.log("checking", context.pool3Winners);
-
   const handleChange = (e) => {
     setInputRef(e.target.value);
   };
