@@ -24,8 +24,8 @@
     }
   ],
   "boxText": {
-    "textOne": "社区组织",
-    "textTwo": "推荐奖励",
+    "textOne": "总体表现",
+    "textTwo": "个人表现",
     "textThree": "直接推荐"
   },
   "btnText": "分享",
