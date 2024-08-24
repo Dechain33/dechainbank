@@ -99,9 +99,8 @@ const AdminDashboard = () => {
           Number(await DBTokenContractIns.totalUsdtWithdraw()) / 1000000;
         setTotalWithdraw(totalWithdraw);
 
-        const totalPool1Users = Number(
-          WeiToETH(await DBTokenContractIns.getPoolParticipants(1))
-        );
+        const totalPool1Users = await DBTokenContractIns.getPoolParticipants(1);
+
         setPool1Users(totalPool1Users.length);
 
         const tranIds = await DBTokenContractIns.getUnconfirmedTransactions();
