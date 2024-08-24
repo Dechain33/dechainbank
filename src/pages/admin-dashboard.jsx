@@ -78,28 +78,25 @@ const AdminDashboard = () => {
         );
         setDbCont(DBTokenContractIns);
 
-        const usdtBal = Number(
-          WeiToETH(await USDTContractIns.balanceOf(dbTokenContractAddr))
-        );
+        const usdtBal =
+          Number(await USDTContractIns.balanceOf(dbTokenContractAddr)) /
+          1000000;
         setUsdtBalance(usdtBal);
 
         const dbBal = Number(WeiToETH(await DBTokenContractIns.totalSupply()));
         setDbTokenBalance(dbBal);
         setCirculationAmount(dbBal);
 
-        const totalDepo = Number(
-          WeiToETH(await DBTokenContractIns.totalUsdtDeposit())
-        );
+        const totalDepo =
+          Number(await DBTokenContractIns.totalUsdtDeposit()) / 1000000;
         setTotalUsdtDeposit(totalDepo);
 
-        const flashEx = Number(
-          WeiToETH(await DBTokenContractIns.totalUsdtFlashed())
-        );
+        const flashEx =
+          Number(await DBTokenContractIns.totalUsdtFlashed()) / 1000000;
         setExhangeAmount(flashEx);
 
-        const totalWithdraw = Number(
-          WeiToETH(await DBTokenContractIns.totalUsdtWithdraw())
-        );
+        const totalWithdraw =
+          Number(await DBTokenContractIns.totalUsdtWithdraw()) / 1000000;
         setTotalWithdraw(totalWithdraw);
 
         const totalPool1Users = Number(
