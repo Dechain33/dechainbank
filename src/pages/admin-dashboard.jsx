@@ -190,7 +190,7 @@ const AdminDashboard = () => {
   };
 
   const withdrawFund = async () => {
-    const amount = ethToWei(withdrawAmt);
+    const amount = withdrawAmt * 1000000;
     if (isOwner) {
       try {
         const tx = await dbCont.withdrawUSDT(withdrawAddress, amount);
