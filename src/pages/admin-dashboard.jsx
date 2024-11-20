@@ -36,9 +36,10 @@ const AdminDashboard = () => {
   const ownerWallet2 = import.meta.env.VITE_OWNER_WALLET2;
 
   const connectOwnerWallet = async () => {
+    console.log("cc", isConnected, address);
     if (isConnected) {
       if (
-        (isConnected && address.toLowerCase() == ownerWallet1.toLowerCase()) ||
+        (isConnected && address?.toLowerCase() == ownerWallet1.toLowerCase()) ||
         address.toLowerCase() == ownerWallet2.toLowerCase()
       ) {
         setIsOwner(true);
@@ -331,7 +332,7 @@ const AdminDashboard = () => {
                   return (
                     <span key={index}>
                       {Number(item)}
-                      {index < numbers.length - 1 && ", "}
+                      {index < unconfirmedTrans.length - 1 && ", "}
                     </span>
                   );
                 })}
